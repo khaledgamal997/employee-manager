@@ -6,4 +6,4 @@
 
 ***DBMS*** : *MySQL*
 
-***Front-end*** : *BootStrap, Thymleaf*
+***Front-end*** : *BootStrap, Thymeleaf*

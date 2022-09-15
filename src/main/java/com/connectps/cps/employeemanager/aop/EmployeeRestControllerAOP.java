@@ -40,7 +40,7 @@ public class EmployeeRestControllerAOP {
 
     @Around("com.connectps.cps.employeemanager.aop.PointcutAOP.beforeRestControllerPointcut()")
     public Object aroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
-        Employee employee = null;
+        Employee employee;
         long start = System.currentTimeMillis();
 
         Object obj = pjp.proceed();
@@ -52,7 +52,8 @@ public class EmployeeRestControllerAOP {
             logger.log(Level.INFO, "{0}", pjp.getSignature().getName());
             logger.log(Level.INFO, "takes {0} millisec to execute", res);
             if (obj instanceof ResponseEntity) {
-                ResponseEntity response = (ResponseEntity) obj;
+                ResponseEntity response;
+                response = (ResponseEntity) obj;
                 if (response.getBody() instanceof Employee) {
                     employee = (Employee) response.getBody();
                     String title = employee.getTitle();
@@ -74,8 +75,9 @@ public class EmployeeRestControllerAOP {
 
             }
         }
-        catch (Exception e) {
 
+        catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return obj;
     }
