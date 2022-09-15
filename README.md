@@ -4,6 +4,6 @@
 
 ***Back-end*** : *MVC, Spring Data, REST api, DAO, AOP*
 
-***DBMS *** : *MySQL*
+***DBMS*** : *MySQL*
 
 ***Front-end*** : *BootStrap, Thymleaf*
